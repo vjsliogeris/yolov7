@@ -1,0 +1,10 @@
+source env310/bin/activate
+
+# Change 74 to something else
+
+# Eval
+python test.py --data data/coco_kpts.yaml --img 800 --conf 0.001 --iou 0.65 --weights runs/train/yolov774/weights/best.pt --kpt-label
+
+# Train
+python train.py --workers 8 --device 0 --batch-size 8 --data data/coco_kpts.yaml --img 800 800 --cfg cfg/yolov7-w6-pose.yaml  --name yolov7 --hyp data/hyp.pose.yaml  --kpt-label --sync-bn --weights 'runs/train/yolov774/weights/last.pt'
+
