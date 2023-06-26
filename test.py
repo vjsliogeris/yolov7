@@ -391,7 +391,7 @@ if __name__ == '__main__':
     opt.save_json_kpt |= opt.data.endswith('coco_kpts.yaml')
     opt.data = check_file(opt.data)  # check file
     print(opt)
-    check_requirements(exclude=('tensorboard', 'pycocotools', 'thop'))
+    #check_requirements(exclude=('tensorboard', 'pycocotools', 'thop'))
 
     if opt.task in ('train', 'val', 'test'):  # run normally
         test(opt.data,
